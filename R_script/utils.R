@@ -84,7 +84,8 @@ dndsheatmap <- function(dnds_mat, col_palette, taxon_list, ylabels){
     heatmap_plot <- ggplot(data = melt_mat, aes(Var1,Var2)) + 
       geom_tile(aes(fill=value)) + scale_y_discrete(name="", limits = rev(levels(melt_mat$Var2)),
                                                     label = ylabels) + 
-      scale_fill_gradientn(colours = c("black","red","white"), values = rescale(c(0, max_dnds, 1))) + 
+      scale_fill_gradientn(colours = c("black","gray0","red","white"), 
+                           values = rescale(c(0, 0.00000001, 0.00000001, 1))) + 
       theme(axis.text.y = element_text(colour = col_lab), 
             axis.text.x = element_blank(),
             axis.title.x = element_blank(),
@@ -97,7 +98,8 @@ dndsheatmap <- function(dnds_mat, col_palette, taxon_list, ylabels){
     heatmap_plot <- ggplot(data = melt_mat, aes(Var1,Var2)) + 
       geom_tile(aes(fill=value)) + scale_y_discrete(name="", limits = rev(levels(melt_mat$Var2)),
                                                     label = ylabels) + 
-      scale_fill_gradientn(colours = c("black","red","white","blue"), values = rescale(c(0, min_dnds, 1, max_dnds))) + 
+      scale_fill_gradientn(colours = c("black","gray0","red","white","blue"), 
+                           values = rescale(c(0, 0.00000001, 0.00000001, 1, max_dnds))) + 
       theme(axis.text.y = element_text(colour = col_lab), 
             axis.text.x = element_blank(),
             axis.title.x = element_blank(),
