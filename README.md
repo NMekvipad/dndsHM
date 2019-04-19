@@ -19,6 +19,7 @@ This script depends on:
 ### Code example
 
 Lower triangular matrix of dn or ds value from MEGA program can be read and converted into symmetric distance matrix using read_distancematrix function. 
+
 ```
 dn_sample <- read_distancematrix(dn_file_path)
 
@@ -29,6 +30,8 @@ Dendrogram in newick format can be read and converted into dendro type object in
 tree_sample <- read_dendrogram(tree_file_path)
 
 ```
+The samples of input file can be found in sample_file folder.
+
 MEGA program calculates dn and ds separately, so to generate dn/ds matrix we use dnds_matrix function. The order of label in matrix can be specified by specifying vector of ordered label to the dendrogram_label argument.   
 
 ```
@@ -78,6 +81,8 @@ name_vec <- c("Chlorotetraedron incus SAG43.81", "Neochloris aquatica UTEX B138"
 ita_name <- italic_sciname(name_vec, pattern) 
 
 ```
+
+
 
 ### Authors
 
