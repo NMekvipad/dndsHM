@@ -53,12 +53,15 @@ read_dendrogram <- function(tree_file){
   return(dendro_sorted)
 }
 
-dnds_matrix <- function(dn_mat, ds_mat, dendrogram_label){
+dnds_matrix <- function(dn_mat, ds_mat, dendrogram_label=NULL){
   
   dnds_mat <- dn_mat/ds_mat
-  # sort row and column
-  dnds_mat <- dnds_mat[dendrogram_label, ]
-  dnds_mat <- dnds_mat[ ,dendrogram_label]
+  if(!is.null(dendrogram_label)){
+    # sort row and column
+    dnds_mat <- dnds_mat[dendrogram_label, ]
+    dnds_mat <- dnds_mat[ ,dendrogram_label]
+  }
+
   dnds_mat[is.na(dnds_mat)] <- 0
   return(dnds_mat)
 }
@@ -73,7 +76,7 @@ colvec_gen <- function(label, cols, taxon_list){
 }
 
 
-dndsheatmap <- function(dnds_mat, col_palette, taxon_list, ylabels){
+dndsheatmap <- function(dnds_mat, taxon_list, col_palette, ylabels){
   min_dnds <- min(dnds_mat)
   max_dnds <- max(dnds_mat)
   melt_mat <- melt(dnds_mat) # Var1 and Var2 are species name of each pair and value is dn/ds
