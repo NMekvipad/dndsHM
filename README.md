@@ -3,11 +3,11 @@
 
 R-script containing function to generate heatmap of pairwise dn/ds of value from dn/ds value calculated by MEGA program and other utilty functions for generating dn/ds heatmap with phylogenetic tree e.g function to generate list of correctly display scientific name (binomial nomenclature with italicized part for species name and non-italicized part for strain name) in plot. 
 
-This script was written for the article titled Evolution of organellar genes of chlorophyte algae: Relevance to phylogenetic inference (link to aritcle soon).
+This script was written for the article titled [Evolution of organellar genes of chlorophyte algae: Relevance to phylogenetic inference](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0216608).
 
 
 ### Prerequisites
-MEGA is required for dn and ds value calculation. [https://www.megasoftware.net/]
+MEGA is required for dn and ds value calculation. [MEGA](https://www.megasoftware.net/)
 
 This script depends on:
 ```
